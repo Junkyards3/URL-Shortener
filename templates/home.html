@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+{% block title %}Url Shortener{% endblock %}
+{% block content %}
+
+<div class="container mx-auto py-12">
+    <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-md">
+        <div class="px-6 py-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-2">URL Shortener</h2>
+            <form hx-post="/">
+                <div class="mb-4">
+                    <label for="url" class="block text-gray-700 text-sm font-bold mb-2">URL</label>
+                    <input type="text" id="url" name="url"
+                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="shortened-url" class="block text-gray-700 text-sm font-bold mb-2">Shortened URL</label>
+                    <input type="text" id="shortened-url" name="shortened-url" readonly
+                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button">
+                        Shorten URL
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
